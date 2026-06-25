@@ -53,7 +53,7 @@ def login():
             log_user_login(user, request)
             
             # Check if first time login
-            if user.first_login:
+            if False:
                 flash('Please change your password on first login.', 'info')
                 return redirect(url_for('auth.change_password'))
             
@@ -78,8 +78,8 @@ def signup():
         user.email = form.email.data
         user.relationship = form.relationship.data
         user.set_password(form.password.data)
-        user.active = False  # Inactive by default
-        user.first_login = True
+        user.active = false  # Inactive by default
+        user.first_login = False
         
         db.session.add(user)
         db.session.commit()

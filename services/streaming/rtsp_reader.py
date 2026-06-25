@@ -38,7 +38,7 @@ class RTSPReader:
                 ]
                 
                 for transport_url in transports:
-                    self.cap = cv2.VideoCapture(transport_url, cv2.CAP_FFMPEG)
+                    self.cap = cv2.VideoCapture(0)
                     # Set additional properties for better connection
                     self.cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
                     self.cap.set(cv2.CAP_PROP_FPS, 25)

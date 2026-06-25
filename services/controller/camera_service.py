@@ -197,6 +197,10 @@ class CameraControlService:
         
         try:
             success = controller.set_privacy_mode(enabled)
+            if enabled:
+             self.camera_service.stop_streaming()
+            else:
+             self.camera_service.start_streaming()
             if success:
                 return {
                     'success': True,
